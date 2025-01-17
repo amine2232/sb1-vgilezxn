@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-white">
+    <ActionBar title="Quran Reader" class="bg-green-600 text-white" />
+    
+    <GridLayout>
+        <ListView items="{{ quranPages }}" class="bg-white" separatorColor="transparent">
+            <ListView.itemTemplate>
+                <GridLayout rows="auto" columns="auto, *" class="p-4 border-b border-gray-200">
+                    <Label text="{{ verseKey }}" row="0" col="0" class="text-sm text-gray-600 ml-2" />
+                    <Label text="{{ text }}" row="0" col="1" textWrap="true" 
+                           class="text-xl text-right leading-relaxed font-semibold p-2" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <ActivityIndicator busy="{{ isLoading }}" />
+    </GridLayout>
+</Page>
